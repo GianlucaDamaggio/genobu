@@ -27,7 +27,7 @@ ggsave("~/projects/genobu/plots/density_buf_length_Max15k.pdf")
 qsub -q bigmpi2@sauron.recas.ba.infn.it -l nodes=1:ppn=16 -o /lustrehome/gianluca/junk/genobu/shasta_5k.out -e /lustrehome/gianluca/junk/genobu/shasta_5k.err -N shasta-all-5k  ~/jobs/genobu/pbs-shasta_all_Min5k.sh
 ```
 
-### Evaluate total length of Assembly
+### Count total length of Assembly
 ```
 cat Assembly.fasta | grep ">" | tr " " "\t" | cut -f 3 > length_assembly.txt
 
