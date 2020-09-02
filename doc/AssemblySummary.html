@@ -1,0 +1,104 @@
+
+<!DOCTYPE html><html><head><link rel=icon href=docs/CZI-new-logo.png /><meta charset='UTF-8'><title>Shasta assembler</title>
+<style>
+    body {
+        font-family: Arial;
+    }
+    pre {
+        font-family: courier;
+    }
+    p, input {
+        font-size: 16px;
+    }
+    h1, h2, h3 {
+        color: DarkSlateBlue;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #b8b5c7d9;
+        padding: 2px;
+    }
+    th {
+        font-weight: bold;
+        text-align: center;
+    }
+    th.left {
+        text-align: left;
+    }
+    td.centered {
+        text-align: center;
+    }
+    td.right {
+        text-align: right;
+    }
+    td.smaller {
+        font-size: smaller;
+    }
+    a {
+        color: DarkSlateBlue;
+    }
+    ul.navigationMenu {
+        list-style-type: none;
+        margin: 0px 0px 12px 0px;
+        padding: 0;
+        overflow: hidden;
+        background-color: #404040;
+    }
+    
+    div.navigationButton {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        // min-width: 120px;
+    }
+    
+    .navigationMenuEntry:hover .navigationButton {
+        background-color: black;
+    }
+    
+    li.navigationMenuEntry {
+        display: inline-block;
+    }
+    
+    .navigationItems {
+        display: none;
+        position: absolute;
+        background-color: DodgerBlue;
+        // min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    a.navigationItem {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .navigationItems a:hover {background-color: SteelBlue}
+    
+    .navigationMenuEntry:hover .navigationItems {
+        display: block;
+    }
+
+    input[type=submit] {
+        background-color: #89bef2;
+        padding: 4px;
+    }
+
+    input[type=button] {
+        padding: 4px;
+    }
+
+    input[type=text], input[type=radio] {
+        background-color: #ecf1f0;
+        border-width: thin;
+    }
+</style>
+    </head><h1>Shasta assembly summary</h1><h3>Shasta version</h3>Shasta Release 0.5.1<h3>Reads used in this assembly</h3><table><tr><td>Number of reads<td class=right>10452538<tr><td>Number of raw sequence bases<td class=right>85076428603<tr><td>Average read length (for raw read sequence)<td class=right>8139<tr><td>Read N50 (for raw read sequence)<td class=right>8233<tr><td>Number of run-length encoded bases<td class=right>60722685588<tr><td>Average length ratio of run-length encoded sequence over raw sequence<td class=right>0.7137<tr><td>Number of reads flagged as palindromic<td class=right>499458<tr><td>Number of reads flagged as chimeric<td class=right>478364</table><ul><li>Here and elsewhere, &quot;raw&quot; refers to the original read sequence, as opposed to run-length encoded sequence.<li>Reads discarded on input are not included in the above table (see <a href='#discarded'>below</a>).<li>See ReadLengthHistogram.csv and Binned-ReadLengthHistogram.csv for details of the read length distribution of reads used in this assembly.</ul><h3 id=discarded>Reads discarded on input</h3><table><tr><th><th>Reads<th>Bases<tr><td>Reads discarded on input because they contained invalid bases<td class=right>0<td class=right>0<tr><td>Reads discarded on input because they were too short<td class=right>7345519<td class=right>21194383976<tr><td>Reads discarded on input because they contained repeat counts greater than 255<td class=right>0<td class=right>0<tr><td>Reads discarded on input, total<td class=right>7345519<td class=right>21194383976<tr><td>Fraction of reads discarded on input over total present in input files<td class=right>0.4127<td class=right>0.1994</table><ul><li>Base counts in the above table are raw sequence bases.<li>Here and elsewhere, &quot;raw&quot; refers to the original read sequence, as opposed to run-length encoded sequence.</ul><h3>Marker <i>k</i>-mers</h3><table><tr><td>Length <i>k</i> of <i>k</i>-mers used as markers<td class=right>10<tr><td>Total number of <i>k</i>-mers<td class=right>78732<tr><td>Number of <i>k</i>-mers used as markers<td class=right>7764<tr><td>Fraction of <i>k</i>-mers used as markers<td class=right>0.0986</table><ul><li>In the above table, all <i>k</i>-mer counts only include run-length encoded <i>k</i>-mers, that is, <i>k</i>-mers without repeated bases.</ul><h3>Markers</h3><table><tr><td>Total number of markers on all reads, one strand<td class=right>5978209564<tr><td>Total number of markers on all reads, both strands<td class=right>11956419128<tr><td>Average number of markers per raw base<td class=right>0.07027<tr><td>Average number of markers per run-length encoded base<td class=right>0.09845<tr><td>Average base offset between markers in raw sequence<td class=right>14.23<tr><td>Average base offset between markers in run-length encoded sequence<td class=right>10.16<tr><td>Average base gap between markers in run-length encoded sequence<td class=right>0.1573</table><ul><li>Here and elsewhere, &quot;raw&quot; refers to the original read sequence, as opposed to run-length encoded sequence.</ul><h3>Alignments</h3><table><tr><td>Number of alignment candidates found by the LowHash algorithm<td class=right>94784371<tr><td>Number of good alignments<td class=right>63179663<tr><td>Number of good alignments kept in the read graph<td class=right>36458053</table><h3>Read graph</h3><table><tr><td>Number of vertices<td class=right>20905076<tr><td>Number of edges<td class=right>72916106</table><ul><li>The read graph contains both strands. Each read generates two vertices.<li>Isolated reads in the read graph don't contribute to the assembly. See the table below for a summary of isolated reads in the read graph. Each isolated read corresponds to two isolated vertices in the read graph, one for each strand.</ul><table><tr><th><th>Reads<th>Bases<tr><td>Isolated reads<td class=centered>1496830<td class=centered>13099281031<tr><td>Non-isolated reads<td class=centered>8955708<td class=centered>71977147572<tr><td>Isolated reads fraction<td class=centered>0.1432<td class=centered>0.154<tr><td>Non-isolated reads fraction<td class=centered>0.8568<td class=centered>0.846</table><h3>Marker graph</h3><table><tr><td>Total number of vertices<td class=right>316156308<tr><td>Total number of edges<td class=right>847309618<tr><td>Number of vertices that are not isolated after edge removal<td class=right>313987082<tr><td>Number of edges that were not removed<td class=right>313969832</table><ul><li>The marker graph contains both strands.</ul><h3>Assembly graph</h3><table><tr><td>Number of vertices<td class=right>46844<tr><td>Number of edges<td class=right>29594<tr><td>Number of edges assembled<td class=right>14797</table><ul><li>The assembly graph contains both strands.</ul><h3>Assembled segments (&quot;contigs&quot;)</h3><table><tr><td>Number of segments assembled<td class=right>14797<tr><td>Total assembled segment length<td class=right>2577509483<tr><td>Longest assembled segment length<td class=right>2875864<tr><td>Assembled segments N<sub>50</sub><td class=right>472118</table><ul><li>Shasta uses GFA terminology (<i>segment</i> instead of the most common <i>contig</i>). A contiguous section of assembled sequence can consist of multiple segments, for example in the presence of heterozygous bubbles.<li>See AssemblySummary.csv for lengths of assembled segments.</ul><h3>Performance</h3><table><tr><td>Elapsed time (seconds)<td class=right>6488<tr><td>Elapsed time (minutes)<td class=right>108.1<tr><td>Elapsed time (hours)<td class=right>1.802<tr><td>Average CPU utilization<td class=right>0.3546</table></body></html>
